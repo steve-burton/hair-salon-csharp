@@ -41,6 +41,19 @@ namespace  HairSalon
       Assert.Equal(testList, result);
     }
 
+    [Fact]
+    public void Test_Save_AssignsIdToObject()
+    {
+      Client testClient = new Client("Susan", "Portland", 1);
+      testClient.Save();
+      Client savedClient = Client.GetAll()[0];
+
+      int result = savedClient.GetId();
+      int testId = testClient.GetId();
+
+      Assert.Equal(testId, result);
+    }
+
 
     public void Dispose()
     {
