@@ -52,6 +52,53 @@ namespace HairSalon.Objects
 			_stylistId = clientStylistId;
 		}
 
+		public override bool Equals(System.Object otherClient)
+		{
+			if (!(otherClient is Client))
+			{
+				return false;
+			}
+			else
+			{
+				Client newClient = (Client) otherClient;
+				bool idEquality = (this.GetId() == newClient.GetId());
+				bool nameEquality = (this.GetClientName() == newClient.GetClientName());
+				bool detailsEquality = (this.GetClientDetails() == newClient.GetClientDetails());
+				bool clientStylistIdEquality = (this.GetClientStylistId() == newClient.GetClientStylistId());
+				return (idEquality && nameEquality && detailsEquality && clientStylistIdEquality);
+			}
+		}
+
+		public static List<Client> GetAll()
+		{
+			List<Client> allClients = new List<Client>{};
+
+			SqlConnection conn = DB.Connection();
+			conn.Open();
+
+			SqlCommand cmd = new SqlCommand("SELECT * FROM clients;", conn);
+			SqlDataReader rdr = cmd.ExecuteReader();
+
+			while(rdr.Read())
+			{
+				string clientName = rdr.GetString(1);
+				string clientDetails = rdr.GetString(2);
+				int clientStylistId = rdr.GetInt32(3);
+				int clientId = rdr.GetInt32(0);
+				Client newClient = new Client(clientName, clientDetails, clientStylistId, clientId);
+				allClients.Add(newClient);
+			}
+			if(rdr != null)
+			{
+				rdr.Close();
+			}
+			if(conn != null)
+			{
+				conn.Close();
+			}
+			return allClients;
+		}
+
 		public void Save()
 		{
 			SqlConnection conn = DB.Connection();
