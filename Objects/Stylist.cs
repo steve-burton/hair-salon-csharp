@@ -42,6 +42,22 @@ namespace HairSalon.Objects
 		// 	_stylistDetails = stylistDetails;
 		// }
 
+		public override bool Equals(System.Object otherStylist)
+		{
+			if (!(otherStylist is Stylist))
+			{
+				return false;
+			}
+			else
+			{
+				Stylist newStylist = (Stylist) otherStylist;
+				bool idEquality = (this.GetId() == newStylist.GetId());
+				bool nameEquality = (this.GetStylistName() == newStylist.GetStylistName());
+				bool detailsEquality = (this.GetStylistDetails() == newStylist.GetStylistDetails());
+				return (idEquality && nameEquality && detailsEquality);
+			}
+		}
+
 		public static List<Stylist> GetAll()
 		{
 			List<Stylist> allStylists = new List<Stylist>{};
