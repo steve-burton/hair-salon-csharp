@@ -74,7 +74,7 @@ namespace HairSalon.Objects
 				string stylistName = (rdr.GetString(1));
 				string stylistDetails = (rdr.GetString(2));
 
-				Stylist newStylist = new Stylist(stylistDetails, stylistName, stylistId);
+				Stylist newStylist = new Stylist(stylistName, stylistDetails, stylistId);
 				allStylists.Add(newStylist);
 			}
 			if (rdr != null)
