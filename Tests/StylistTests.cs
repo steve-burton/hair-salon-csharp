@@ -37,7 +37,7 @@ namespace  HairSalon
 
       List<Stylist> result = Stylist.GetAll();
       List<Stylist> testList = new List<Stylist>{testStylist};
-      
+
       Assert.Equal(testList, result);
     }
 
@@ -53,6 +53,17 @@ namespace  HairSalon
       int testId = testStylist.GetId();
 
       Assert.Equal(testId, result);
+    }
+
+    [Fact]
+    public void Test_Find_FindsStylistInDatabase()
+    {
+      Stylist testStylist = new Stylist("Jenny", "Portland");
+      testStylist.Save();
+
+      Stylist foundStylist = Stylist.Find(testStylist.GetId());
+
+      Assert.Equal(testStylist, foundStylist);
     }
 
     public void Dispose()
