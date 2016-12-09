@@ -146,15 +146,48 @@ namespace HairSalon.Objects
 			}
 			Stylist foundStylist = new Stylist(foundStylistName, foundStylistDetails, foundStylistId);
 
-			if(rdr != null)
+			if (rdr != null)
 			{
 				rdr.Close();
 			}
-			if(conn != null)
+			if (conn != null)
 			{
 				conn.Close();
 			}
 			return foundStylist;
+		}
+
+		public List<Client> GetClients()
+		{
+			SqlConnection conn = DB.Connection();
+			conn.Open();
+
+			SqlCommand cmd = new SqlCommand("SELECT * FROM clients WHERE stylist_id = @ClientStylistId;", conn);
+			SqlParameter stylistIdParameter = new SqlParameter();
+			stylistIdParameter.ParameterName = "@ClientStylistId";
+			stylistIdParameter.Value = this.GetId();
+			cmd.Parameters.Add(stylistIdParameter);
+			SqlDataReader rdr = cmd.ExecuteReader();
+
+			List<Client> clients = new List<Client> {};
+			while(rdr.Read())
+			{
+				int clientId = rdr.GetInt32(0);
+				string clientName = rdr.GetString(1);
+				string clientDetails = rdr.GetString(2);
+				int clientStylistId = rdr.GetInt32(3);
+				Client newClient = new Client(clientName, clientDetails, clientStylistId, clientId);
+				clients.Add(newClient);
+			}
+			if (rdr != null)
+			{
+				rdr.Close();
+			}
+			if (conn != null)
+			{
+				conn.Close();
+			}
+			return clients;
 		}
 
 		public static void DeleteAll()
