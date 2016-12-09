@@ -1,32 +1,53 @@
 # Hair Salon
 
-#### Description, Date.
+#### December 9, 2016
 
-#### By **Steve Burton**
+### By **Steve Burton**
 
 ### Specifications
-List project requirements.
+This project will create an app for a hair salon with a database to hold stylist and client deatils and show which clients belong to each stylist.
 
 These are the steps I'll take to write my code:
 
-This is the first test.
-* Input: XXXX
-* Output: XXXX
+First I'll test to ensure the database is empty to begin with.
+* Input: 0
+* Output: 0
 
-This is the second test.
-* Input: XXXX
-* Output: XXXX
+Next I'll check for equality if the names are the same.
+* Input: "Jenny"
+* Output: "Jenny"
 
-This is the third test.
-* Input: XXXX
-* Output: XXXX
+Third, test to ensure the user can save to the database.
+* Input: "Jenny"
+* Output: "Jenny"
 
-This is the fourth test.
-* Input: XXXX
-* Output: XXXX
+Fourth, test to ensure an ID is assigned to a stylist.
+* Input: 1
+* Output: 1
+
+Fifth, test that the user can find a stylist's details in the database.
+* Input: "Jenny"
+* Output: "Jenny", Portland
+
+Sixth, test that the user can find a client's details in the database.
+* Input: "Susan"
+* Output: "Susan", Portland
+
+Seventh, test that the user can find all the clients who belong to a stylist.
+* Input: Client name
+* Output: Stylist name
 
 
 ## Setup/Installation Requirements
+
+* Set up a database:
+  CREATE DATABASE hair_salon;
+  GO
+  USE hair_salon;
+  GO
+  CREATE TABLE stylists (id INT IDENTITY(1,1), stylist_name VARCHAR(255), stylist_details VARCHAR(255));
+  CREATE TABLE clients (id INT IDENTITY(1,1), client_name VARCHAR(255), client_details VARCHAR(255), stylist_id INT);
+  GO
 
 * Clone this repository or download it to your computer.
 * Navigate to the project directory in the terminal.
