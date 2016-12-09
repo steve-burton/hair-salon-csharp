@@ -40,15 +40,16 @@ Seventh, test that the user can find a client's details in the database.
 
 ## Setup/Installation Requirements
 
-* Set up a database:
-  CREATE DATABASE hair_salon;
-  GO
-  USE hair_salon;
-  GO
-  CREATE TABLE stylists (id INT IDENTITY(1,1), stylist_name VARCHAR(255), stylist_details VARCHAR(255));
-  CREATE TABLE clients (id INT IDENTITY(1,1), client_name VARCHAR(255), client_details VARCHAR(255), stylist_id INT);
-  GO
+Set up a database:
+* CREATE DATABASE hair_salon;
+* GO
+* USE hair_salon;
+* GO
+* CREATE TABLE stylists (id INT IDENTITY(1,1), stylist_name VARCHAR(255), stylist_details VARCHAR(255));
+* CREATE TABLE clients (id INT IDENTITY(1,1), client_name VARCHAR(255), client_details VARCHAR(255), stylist_id INT);
+* GO
 
+To run the application:
 * Clone this repository or download it to your computer.
 * Navigate to the project directory in the terminal.
 * Use the command > dnu restore to download any necessary dependencies.
