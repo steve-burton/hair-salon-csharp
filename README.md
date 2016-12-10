@@ -49,11 +49,11 @@ Ten, test to update a client's stylist.
 * Input: "Jenny"
 * Output: "Jessica"
 
-Ten, test to delete stylist
+Eleven, test to delete stylist
 * Input: "Jenny"
 * Output: "Empty"
 
-Eleven test to delete client
+Twelve, test to delete client
 * Input: "Susan"
 * Output: "Empty"
 
