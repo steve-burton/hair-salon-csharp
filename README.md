@@ -42,8 +42,12 @@ Eight, test to update stylist details.
 * Output: "Jenny", "Oregon City"
 
 Nine, test to update client details.
-* Input: "Susan", "Portland", "Jenny"
-* Output: "Susan", "Gresham", "Jessica"
+* Input: "Susan", "Portland"
+* Output: "Susan", "Gresham"
+
+Ten, test to update a client's stylist.
+* Input: "Jenny"
+* Output: "Jessica"
 
 Ten, test to delete stylist
 * Input: "Jenny"

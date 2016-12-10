@@ -64,6 +64,20 @@ namespace  HairSalon
       Assert.Equal(testClient, foundClient);
     }
 
+    [Fact]
+    public void Test_Update_UpdatesClientDetailsInDatabase()
+    {
+      Client testClient = new Client("Susan", "Portland", 1);
+      testClient.Save();
+      string newClientDetails = ("Oregon City");
+
+      testClient.Update(newClientDetails);
+
+      string result = testClient.GetClientDetails();
+
+      Assert.Equal(newClientDetails, result);
+    }
+
 
     public void Dispose()
     {
