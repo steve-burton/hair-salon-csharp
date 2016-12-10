@@ -190,6 +190,38 @@ namespace HairSalon.Objects
 			return clients;
 		}
 
+		public void Update(string newStylistDetails)
+		{
+			SqlConnection conn = DB.Connection();
+			conn.Open();
+
+			SqlCommand cmd = new SqlCommand("UPDATE stylists SET stylist_details = @NewStylistDetails OUTPUT INSERTED.stylist_details WHERE id = @StylistId;", conn);
+
+			SqlParameter newStylistDetailsParameter = new SqlParameter();
+			newStylistDetailsParameter.ParameterName = "@NewStylistDetails";
+			newStylistDetailsParameter.Value = newStylistDetails;
+			cmd.Parameters.Add(newStylistDetailsParameter);
+
+			SqlParameter stylistIdParameter = new SqlParameter();
+			stylistIdParameter.ParameterName = "@StylistId";
+			stylistIdParameter.Value = this.GetId();
+			cmd.Parameters.Add(stylistIdParameter);
+			SqlDataReader rdr = cmd.ExecuteReader();
+
+			while(rdr.Read())
+			{
+				this._stylistDetails = rdr.GetString(0);
+			}
+			if (rdr != null)
+			{
+				rdr.Close();
+			}
+			if (conn != null)
+			{
+				conn.Close();
+			}
+		}
+
 		public static void DeleteAll()
 		{
 			SqlConnection conn = DB.Connection();

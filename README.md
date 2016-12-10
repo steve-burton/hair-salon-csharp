@@ -9,33 +9,49 @@ This project will create an app for a hair salon with a database to hold stylist
 
 These are the steps I'll take to write my code:
 
-First I'll test to ensure the database is empty to begin with.
+One I'll test to ensure the database is empty to begin with.
 * Input: 0
 * Output: 0
 
-Next I'll check for equality if the names are the same.
+Two I'll check for equality if the names are the same.
 * Input: "Jenny"
 * Output: "Jenny"
 
-Third, test to ensure the user can save to the database.
+Three, test to ensure the user can save to the database.
 * Input: "Jenny"
 * Output: "Jenny"
 
-Fourth, test to ensure an ID is assigned to a stylist.
+Four, test to ensure an ID is assigned to a stylist.
 * Input: 1
 * Output: 1
 
-Fifth, test that the user can find a stylist's details in the database by ID.
+Five, test that the user can find a stylist's details in the database by ID.
 * Input: Stylist ID
 * Output: "Jenny", "Portland"
 
-Sixth, test that the user can find a client's details in the database by ID.
+Six, test that the user can find a client's details in the database by ID.
 * Input: Client ID
 * Output: "Susan", "Portland"
 
-Seventh, test that the user can find all the clients who belong to a stylist.
+Seven, test that the user can find all the clients who belong to a stylist.
 * Input: Client name
 * Output: Stylist name
+
+Eight, test to update stylist details.
+* Input: "Jenny", "Portland"
+* Output: "Jenny", "Oregon City"
+
+Nine, test to update client details.
+* Input: "Susan", "Portland", "Jenny"
+* Output: "Susan", "Gresham", "Jessica"
+
+Ten, test to delete stylist
+* Input: "Jenny"
+* Output: "Empty"
+
+Eleven test to delete client
+* Input: "Susan"
+* Output: "Empty"
 
 
 ## Setup/Installation Requirements
