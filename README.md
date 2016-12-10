@@ -25,17 +25,17 @@ Fourth, test to ensure an ID is assigned to a stylist.
 * Input: 1
 * Output: 1
 
-Fifth, test that the user can find a stylist's details in the database.
-* Input: "Jenny"
+Fifth, test that the user can find a stylist's details in the database by ID.
+* Input: Stylist ID
 * Output: "Jenny", "Portland"
 
-Sixth, test that the user can find all the clients who belong to a stylist.
+Sixth, test that the user can find a client's details in the database by ID.
+* Input: Client ID
+* Output: "Susan", "Portland"
+
+Seventh, test that the user can find all the clients who belong to a stylist.
 * Input: Client name
 * Output: Stylist name
-
-Seventh, test that the user can find a client's details in the database.
-* Input: "Susan"
-* Output: "Susan", "Portland"
 
 
 ## Setup/Installation Requirements
