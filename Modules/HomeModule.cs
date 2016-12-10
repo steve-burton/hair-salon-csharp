@@ -18,6 +18,12 @@ namespace HairSalon
 			Get["/add-new-client"] = _ => {
 				return View["add-new-client.cshtml"];
 			};
+			Get["/stylists"] = _ => {
+				return View["stylists.cshtml"];
+			};
+			Get["/clients"] = _ => {
+				return View["clients.cshtml"];
+			};
 			Post["/added-stylist"] = _ => {
 				Stylist newStylist = new Stylist(Request.Form["stylist-name"], Request.Form["stylist-details"]);
 				newStylist.Save();
@@ -28,6 +34,25 @@ namespace HairSalon
 				newClient.Save();
 				return View["success-client.cshtml"];
 			};
+			Get["stylist/update/{id}"] = parameters => {
+				Stylist SelectedStylist = Stylist.Find(parameters.id);
+				return View["stylist-update.cshtml", SelectedCategory];
+			};
+			Patch["stylist/update/{id}"] = parameters => {
+				Stylist SelectedStylist = Stylist.Find(parameters.id);
+				SelectedStylist.Update(Request.Form["stylist-name"], Request.Form["stylist-details"]);
+				return View["success-stylist-update.cshtml"];
+			};
+			Get["client/update/{id}"] = parameters => {
+				Client SelectedClient = Client.Find(parameters.id);
+				return View["client-update.cshtml", SelectedCategory];
+			};
+			Patch["client/update/{id}"] = parameters => {
+				Client SelectedClient = Client.Find(parameters.id);
+				SelectedClient.Update(Request.Form["client-name"], Request.Form["client-details"], Request.Form["client-stylist"]);
+				return View["success-stylist-update.cshtml"];
+			};
+
 		}
 	}
 }
