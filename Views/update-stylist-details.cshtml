@@ -11,24 +11,22 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h2>Update a stylist's details</h2>
+					<form class="add-new-stylist" action="/added-stylist" method="post">
+						<div class="form-group">
+							<label for="stylist-name">Enter a new stylist:</label>
+							<input type="text" class="form-control" name="stylist-name" id="stylist-name" placeholder="Stylist Name">
+						</div>
+						<div class="form-group">
+							<label for="stylist-details">Enter the stylist's details:</label>
+							<input type="text" class="form-control" name="stylist-details" id="stylist-details" placeholder="Stylist Details">
+						</div>
+						<button class="btn" type="submit" name="button">Enter</button>
+					</form>
+					<div>
+						<h2><a href="/">Return home</a></h2>
+					</div>
 				</div>
 			</div>
-			<div>
-				<form class="add-new-stylist" action="/added-stylist" method="post">
-					<div class="form-group">
-						<label for="stylist-name">Enter a new stylist:</label>
-            <input type="text" class="form-control" name="stylist-name" id="stylist-name" placeholder="Stylist Name">
-					</div>
-					<div class="form-group">
-						<label for="stylist-details">Enter the stylist's details:</label>
-            <input type="text" class="form-control" name="stylist-details" id="stylist-details" placeholder="Stylist Details">
-					</div>
-          <button class="btn" type="submit" name="button">Enter</button>
-        </form>
-			</div>
-      <div>
-				<h2><a href="/">Return home</a></h2>
-      </div>
 		</div>
 	</body>
 </html>

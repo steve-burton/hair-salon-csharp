@@ -11,28 +11,26 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h2>Update a client's details</h2>
+					<form class="add-new-client" action="/added-client" method="post">
+						<div class="form-group">
+							<label for="client-name">Enter a new client:</label>
+							<input type="text" class="form-control" name="client-name" id="client-name" placeholder="Client Name">
+						</div>
+						<div class="form-group">
+							<label for="client-details">Enter the client's details:</label>
+							<input type="text" class="form-control" name="client-details" id="client-details" placeholder="Client Details">
+						</div>
+						<div class="form-group">
+							<label for="client-stylist">Enter a stylist for the client:</label>
+							<input type="text" class="form-control" name="client-stylist" id="client-stylist" placeholder="Stylist Name">
+						</div>
+						<button class="btn" type="submit" name="button">Enter</button>
+					</form>
+					<div>
+						<h2><a href="/">Return home</a></h2>
+					</div>
 				</div>
 			</div>
-			<div>
-				<form class="add-new-client" action="/added-client" method="post">
-					<div class="form-group">
-						<label for="client-name">Enter a new client:</label>
-            <input type="text" class="form-control" name="client-name" id="client-name" placeholder="Client Name">
-					</div>
-					<div class="form-group">
-						<label for="client-details">Enter the client's details:</label>
-            <input type="text" class="form-control" name="client-details" id="client-details" placeholder="Client Details">
-					</div>
-					<div class="form-group">
-						<label for="client-stylist">Enter a stylist for the client:</label>
-            <input type="text" class="form-control" name="client-stylist" id="client-stylist" placeholder="Stylist Name">
-					</div>
-          <button class="btn" type="submit" name="button">Enter</button>
-        </form>
-			</div>
-      <div>
-				<h2><a href="/">Return home</a></h2>
-      </div>
 		</div>
 	</body>
 </html>
