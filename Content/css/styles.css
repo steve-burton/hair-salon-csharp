@@ -1,23 +1,23 @@
 body {
   background-image: url(/Content/salon-photo.jpg);
   background-size: cover;
-  padding: 10% 10% 1% 10%;
+  /*padding: 10% 10% 1% 10%;*/
   background-repeat: no-repeat;
 }
 
 .col-md-12 {
-  width: 100%;
-  margin: 3% 40% 6% 3%;
+  width: 90%;
+  margin: 8% 10% 6% 5%;
   border-radius: 20px;
-  padding: 0% 20% 3% 4%;
+  padding: 2% 5% 2% 5%;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
 
 
 .center-col {
-  width: 30%;
-  margin: 3% 30% 6% 30%;
+  width: 50%;
+  margin: 3% 25% 6% 25%;
   border-radius: 20px;
   padding: 6% 10% 3% 10%;
   background-color: rgba(255, 255, 255, 0.6);
@@ -40,6 +40,11 @@ h1 {
   text-align: center;
   font-size: 4em;
   font-weight: lighter;
+}
+
+h3 {
+  line-height: 130%;
+  text-align: center;
 }
 
 h4 {
