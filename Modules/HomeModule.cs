@@ -36,7 +36,7 @@ namespace HairSalon
 			};
 			Get["stylist/update/{id}"] = parameters => {
 				Stylist SelectedStylist = Stylist.Find(parameters.id);
-				return View["stylist-update.cshtml", SelectedCategory];
+				return View["stylist-update.cshtml", SelectedStylist];
 			};
 			Patch["stylist/update/{id}"] = parameters => {
 				Stylist SelectedStylist = Stylist.Find(parameters.id);
@@ -45,7 +45,7 @@ namespace HairSalon
 			};
 			Get["client/update/{id}"] = parameters => {
 				Client SelectedClient = Client.Find(parameters.id);
-				return View["client-update.cshtml", SelectedCategory];
+				return View["client-update.cshtml", SelectedClient];
 			};
 			Patch["client/update/{id}"] = parameters => {
 				Client SelectedClient = Client.Find(parameters.id);
