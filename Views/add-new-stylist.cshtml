@@ -4,31 +4,29 @@
 		<meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="/Content/css/styles.css">
-		<title>Hair Salon</title>
+		<title>Portland Hair Salon</title>
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2>Add a new stylist</h2>
+					<h2>Add a new stylist</h2><br>
+					<form class="add-new-stylist" action="/added-stylist" method="post">
+						<div class="form-group">
+							<label for="stylist-name">Enter a new stylist:</label>
+							<input type="text" class="form-control" name="stylist-name" id="stylist-name" placeholder="Stylist Name">
+						</div>
+						<div class="form-group">
+							<label for="stylist-details">Enter the stylist's details:</label>
+							<input type="text" class="form-control" name="stylist-details" id="stylist-details" placeholder="Stylist Details">
+						</div>
+						<button class="btn" type="submit" name="button">Enter</button>
+					</form><br>
+					<div>
+						<h4><a href="/">Return home</a></h4>
+					</div>
 				</div>
 			</div>
-			<div>
-				<form class="add-new-stylist" action="/added-stylist" method="post">
-					<div class="form-group">
-						<label for="stylist-name">Enter a new stylist:</label>
-            <input type="text" class="form-control" name="stylist-name" id="stylist-name" placeholder="Stylist Name">
-					</div>
-					<div class="form-group">
-						<label for="stylist-details">Enter the stylist's details:</label>
-            <input type="text" class="form-control" name="stylist-details" id="stylist-details" placeholder="Stylist Details">
-					</div>
-          <button class="btn btn-info" type="submit" name="button">Enter</button>
-        </form>
-			</div>
-      <div>
-				<h4><a href="/">Return home</a></h4>
-      </div>
 		</div>
 	</body>
 </html>

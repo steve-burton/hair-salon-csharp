@@ -64,33 +64,19 @@ namespace  HairSalon
       Assert.Equal(testClient, foundClient);
     }
 
-    [Fact]
-    public void Test_Update_UpdatesClientDetailsInDatabase()
-    {
-      Client testClient = new Client("Susan", "Portland", 1);
-      testClient.Save();
-      string newClientDetails = ("Oregon City");
-
-      testClient.Update(newClientDetails);
-
-      string result = testClient.GetClientDetails();
-
-      Assert.Equal(newClientDetails, result);
-    }
-
-    [Fact]
-    public void Test_UpdateStylist_UpdatesClientStylistInDatabase()
-    {
-      Client testClient = new Client("Susan", "Portland", 1);
-      testClient.Save();
-      int newClientStylist = (2);
-
-      testClient.UpdateStylist(newClientStylist);
-
-      int result = testClient.GetClientStylistId();
-
-      Assert.Equal(newClientStylist, result);
-    }
+    // [Fact]
+    // public void Test_Update_UpdatesClientDetailsInDatabase()
+    // {
+    //   Client testClient = new Client("Susan", "Portland", 1);
+    //   testClient.Save();
+    //   string newClientDetails = ("Susan", "Oregon City", 2);
+    //
+    //   testClient.Update(newClientDetails);
+    //
+    //   string result = testClient.GetAll();
+    //
+    //   Assert.Equal(newClientDetails, result);
+    // }
 
     [Fact]
     public void Test_Delete_DeleteClientFromDatabase()
@@ -106,7 +92,6 @@ namespace  HairSalon
 
       Assert.Equal(testClientList, resultClients);
     }
-
 
     public void Dispose()
     {

@@ -174,44 +174,22 @@ namespace HairSalon.Objects
 			return foundClient;
 		}
 
-		public void Update(string newClientDetails)
+		public void Update(string newClientName, string newClientDetails, int newClientStylist)
 		{
 			SqlConnection conn = DB.Connection();
 			conn.Open();
 
-			SqlCommand cmd = new SqlCommand("UPDATE clients SET client_details = @NewClientDetails OUTPUT INSERTED.client_details WHERE id = @ClientId;", conn);
+			SqlCommand cmd = new SqlCommand("UPDATE clients SET (client_name = @NewClientName, client_details = @NewClientDetails, stylist_id = @NewClientStylist) OUTPUT INSERTED.(client_name, client_details, stylist_id) WHERE id = @ClientId;", conn);
+
+			SqlParameter newClientNameParameter = new SqlParameter();
+			newClientNameParameter.ParameterName = "@NewClientName";
+			newClientNameParameter.Value = newClientName;
+			cmd.Parameters.Add(newClientNameParameter);
 
 			SqlParameter newClientDetailsParameter = new SqlParameter();
 			newClientDetailsParameter.ParameterName = "@NewClientDetails";
 			newClientDetailsParameter.Value = newClientDetails;
 			cmd.Parameters.Add(newClientDetailsParameter);
-
-			SqlParameter clientIdParameter = new SqlParameter();
-			clientIdParameter.ParameterName = "@ClientId";
-			clientIdParameter.Value = this.GetId();
-			cmd.Parameters.Add(clientIdParameter);
-			SqlDataReader rdr = cmd.ExecuteReader();
-
-			while(rdr.Read())
-			{
-				this._clientDetails = rdr.GetString(0);
-			}
-			if (rdr != null)
-			{
-				rdr.Close();
-			}
-			if (conn != null)
-			{
-				conn.Close();
-			}
-		}
-
-		public void UpdateStylist(int newClientStylist)
-		{
-			SqlConnection conn = DB.Connection();
-			conn.Open();
-
-			SqlCommand cmd = new SqlCommand("UPDATE clients SET stylist_id = @NewClientStylist OUTPUT INSERTED.stylist_id WHERE id = @ClientId;", conn);
 
 			SqlParameter newClientStylistParameter = new SqlParameter();
 			newClientStylistParameter.ParameterName = "@NewClientStylist";
@@ -226,7 +204,9 @@ namespace HairSalon.Objects
 
 			while(rdr.Read())
 			{
-				this._stylistId = rdr.GetInt32(0);
+				this._clientName = rdr.GetString(0);
+				this._clientDetails = rdr.GetString(1);
+				this._stylistId = rdr.GetInt32(2);
 			}
 			if (rdr != null)
 			{

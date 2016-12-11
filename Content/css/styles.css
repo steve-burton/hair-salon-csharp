@@ -24,8 +24,17 @@ body {
 }
 
 
-p a label {
-  font-size: 1.3em;
+a:link {
+  color: rgb(68, 39, 0);;
+}
+a:visited {
+  color: rgb(68, 39, 0);;
+}
+a:hover {
+  color: rgb(186, 105, 0);
+}
+.btn {
+  background-color: rgb(186, 105, 0);
 }
 
 form {
@@ -40,14 +49,18 @@ h1 {
   text-align: center;
   font-size: 4em;
   font-weight: lighter;
+  color: rgb(68, 39, 0);
 }
 
 h3 {
   line-height: 130%;
   text-align: center;
+  font-weight: 400;
+  color: rgb(68, 39, 0);
 }
 
 h4 {
   line-height: 130%;
   text-align: center;
+  font-weight: bold;
 }

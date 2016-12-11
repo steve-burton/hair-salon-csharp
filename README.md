@@ -41,19 +41,15 @@ Eight, test to update stylist details.
 * Input: "Jenny", "Portland"
 * Output: "Jenny", "Oregon City"
 
-Nine, test to update client details.
-* Input: "Susan", "Portland"
-* Output: "Susan", "Gresham"
+Nine, test to update client details and stylist.
+* Input: "Susan", "Portland", "Jenny"
+* Output: "Susan", "Gresham", "Jessica"
 
-Ten, test to update a client's stylist.
-* Input: "Jenny"
-* Output: "Jessica"
-
-Eleven, test to delete stylist
+Ten, test to delete stylist
 * Input: "Jenny"
 * Output: "Empty"
 
-Twelve, test to delete client
+Eleven, test to delete client
 * Input: "Susan"
 * Output: "Empty"
 
@@ -65,8 +61,8 @@ Set up a database:
 * GO
 * USE hair_salon;
 * GO
-* CREATE TABLE stylists (id INT IDENTITY(1,1), stylist_name VARCHAR(255), stylist_details VARCHAR(255));
-* CREATE TABLE clients (id INT IDENTITY(1,1), client_name VARCHAR(255), client_details VARCHAR(255), stylist_id INT);
+* CREATE TABLE stylists (id INT IDENTITY(1,1), stylist_name VARCHAR(255), stylist_details VARCHAR(255), stylist_id INT);
+* CREATE TABLE clients (id INT IDENTITY(1,1), client_name VARCHAR(255), client_details VARCHAR(255));
 * GO
 
 To run the application:
