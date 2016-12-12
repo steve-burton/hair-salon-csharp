@@ -27,8 +27,12 @@
 						<div class="form-group">
 							<input type="hidden" class="form-control" name="_method" value="PATCH">
 							<input type="hidden" class="form-control" name="client-id" value="@Model.GetId()">
-							<label for="client-stylist">Client stylist's name</label>
-							<input type="text" class="form-control" name="client-stylist" id="client-stylist" placeholder="Stylist Name">
+							<select name="client-stylist">
+						    @foreach (var stylist in Model)
+						    {
+						      <option value="@stylist.GetId()">@stylist.GetStylistName()</option>
+						    }
+						  </select>
 						</div>
 						<button class="btn" type="submit" name="button">Enter</button>
 					</form>
