@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.AspNet.Builder;
-using Nancy;
 using Nancy.Owin;
+using Nancy;
 using Nancy.ViewEngines.Razor;
 
 namespace HairSalon
@@ -16,7 +16,7 @@ namespace HairSalon
   }
   public static class DBConfiguration
   {
-    public static string ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=review;Integrated Security=SSPI;";
+    public static string ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon;Integrated Security=SSPI;";
   }
   public class CustomRootPathProvider : IRootPathProvider
   {
