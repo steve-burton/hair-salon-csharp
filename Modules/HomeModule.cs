@@ -40,7 +40,7 @@ namespace HairSalon
 			};
 			Patch["stylist/update/{id}"] = parameters => {
 				Stylist SelectedStylist = Stylist.Find(parameters.id);
-				SelectedStylist.Update(Request.Form["stylist-name"], Request.Form["stylist-details"]);
+				SelectedStylist.Update(Request.Form["stylist-details"]);
 				return View["success-stylist-update.cshtml"];
 			};
 			Get["client/update/{id}"] = parameters => {
@@ -49,7 +49,7 @@ namespace HairSalon
 			};
 			Patch["client/update/{id}"] = parameters => {
 				Client SelectedClient = Client.Find(parameters.id);
-				SelectedClient.Update(Request.Form["client-name"], Request.Form["client-details"], Request.Form["client-stylist"]);
+				SelectedClient.Update(Request.Form["client-details"]);
 				return View["success-stylist-update.cshtml"];
 			};
 			Get["stylist/delete/{id}"] = parameters => {

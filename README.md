@@ -38,12 +38,12 @@ Seven, test that the user can find all the clients who belong to a stylist.
 * Output: Stylist name
 
 Eight, test to update stylist details.
-* Input: "Jenny", "Portland"
-* Output: "Jenny", "Oregon City"
+* Input: "Portland"
+* Output: "Oregon City"
 
 Nine, test to update client details and stylist.
-* Input: "Susan", "Portland", "Jenny"
-* Output: "Susan", "Gresham", "Jessica"
+* Input: "Portland"
+* Output: "Gresham"
 
 Ten, test to delete stylist
 * Input: "Jenny"
