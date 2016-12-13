@@ -47,6 +47,10 @@ h1 {
   font-weight: lighter;
   color: rgb(68, 39, 0);
 }
+h2 {
+  text-align: center;
+  color: rgb(68, 39, 0);
+}
 
 h3 {
   line-height: 130%;

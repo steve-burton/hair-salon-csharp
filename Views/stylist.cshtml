@@ -10,16 +10,17 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2>Clients</h2>
-					@if(@Model.Count == 0)
+					<h3>Stylist: @Model["stylist"].GetName()</h3>
+					@if(@Model["stylistClients"].Count != 0)
 					{
-						<h3>No clients have been added yet!</h3>
+					<h3>Here are all of this stylist's clients</h3>
+					<ul>
+						@foreach (var stylist in @Model["stylistClients"])
+						{
+							<li><h4>@client.GetClientName()</h4></li>
+						}
 					}
-					@foreach (var client in Model)
-					{
-						<h4><a href="/clients/@client.GetId()">@client.GetClientName()</a> | <a href="/client/update/@client.GetId()">Edit</a>| <a href="/client/delete/@client.GetId()">Delete</a></h4>
-					}
-					<br><br>
+					</ul>
 					<h4><a href="/add-new-stylist">Add a new stylist</a></h4>
 					<h4><a href="/add-new-client">Add a new client</a></h4>
 					<div>
