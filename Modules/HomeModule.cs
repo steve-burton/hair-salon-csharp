@@ -80,18 +80,10 @@ namespace HairSalon
 			// };
 			Get["/stylist/delete/{id}"] = parameters => {
 				Stylist SelectedStylist = Stylist.Find(parameters.id);
-				return View["/stylist-delete.cshtml", SelectedStylist];
-			};
-			Delete["/stylist/delete/{id}"] = parameters => {
-				Stylist SelectedStylist = Stylist.Find(parameters.id);
 				SelectedStylist.Delete();
 				return View["/success-stylist-delete.cshtml"];
 			};
 			Get["/client/delete/{id}"] = parameters => {
-				Client SelectedClient = Client.Find(parameters.id);
-				return View["/client-delete.cshtml", SelectedClient];
-			};
-			Delete["/client/delete/{id}"] = parameters => {
 				Client SelectedClient = Client.Find(parameters.id);
 				SelectedClient.Delete();
 				return View["/success-client-delete.cshtml"];
