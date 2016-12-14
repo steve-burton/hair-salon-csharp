@@ -10,16 +10,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3>Stylist: @Model["stylist"].GetStylistName()</h3>
-					@if(@Model["stylistClients"].Count != 0)
-					{
+					<h3>Client: @Model["client"].GetClientName()</h3>
+					<h4>Details: @Model["clientDetails"].GetClientDetails()</h4>
+					<h4>Stylist: @Model["clientStylist"].GetStylistName()</h4>
 					<h3>Here are all of this stylist's clients</h3>
 					<ul>
 						@foreach (var client in @Model["stylistClients"])
 						{
-							<li><h4>@client.GetClientName()</h4></li>
+							<li><h4>@client.GetStylistName()</h4></li>
 						}
-					}
 					</ul>
 					<h4><a href="/add-new-stylist">Add a new stylist</a></h4>
 					<h4><a href="/add-new-client">Add a new client</a></h4>
