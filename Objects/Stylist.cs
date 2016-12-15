@@ -37,10 +37,6 @@ namespace HairSalon.Objects
 		{
 			_stylistName = stylistName;
 		}
-		// public void Set(string stylistDetails)
-		// {
-		// 	_stylistDetails = stylistDetails;
-		// }
 
 		public override bool Equals(System.Object otherStylist)
 		{

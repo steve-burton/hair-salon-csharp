@@ -69,17 +69,9 @@ namespace HairSalon
 			Get["/client/{id}"] = parameters => {
 				Client selectedClient = Client.Find(parameters.id);
 				Dictionary<string, object> model = new Dictionary<string, object>();
-
-
-
-				// Client clientDetails = selectedClient.GetClientDetails(); //this doesn't
-
 				int clientStylistId = selectedClient.GetClientStylistId();
-
 				Stylist clientStylist = Stylist.Find(clientStylistId);
-
 				model.Add("client", selectedClient);
-				// model.Add("clientDetails", clientDetails);
 				model.Add("clientStylist", clientStylist);
 				return View["client.cshtml", model];
 			};

@@ -48,7 +48,6 @@ namespace  HairSalon
       testStylist.Save();
 
       Stylist savedStylist = Stylist.GetAll()[0];
-
       int result = savedStylist.GetId();
       int testId = testStylist.GetId();
 
@@ -71,11 +70,11 @@ namespace  HairSalon
     {
       Stylist testStylist = new Stylist("Jenny", "Portland");
       testStylist.Save();
-
       Client firstClient = new Client("Susan", "Portland", testStylist.GetId());
       firstClient.Save();
       Client secondClient = new Client("Sally", "Oregon City", testStylist.GetId());
       secondClient.Save();
+
       List<Client> testClientList = new List<Client> {firstClient, secondClient};
       List<Client> resultClientList = testStylist.GetClients();
 
@@ -90,7 +89,6 @@ namespace  HairSalon
       string newStylistDetails = ("Oregon City");
 
       testStylist.Update(newStylistDetails);
-
       string result = testStylist.GetStylistDetails();
 
       Assert.Equal(newStylistDetails, result);
